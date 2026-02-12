@@ -1,0 +1,50 @@
+{
+  "name": "example-app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "build:clean": "pnpm clean:all && pnpm install && pnpm build",
+    "build:packages": "turbo run build --filter=./packages/*",
+    "dev": "turbo run dev --no-cache --continue",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo test"
+  },
+  "devDependencies": {
+    "@payloadcms/eslint-config": "3.28.0",
+    "@payloadcms/eslint-plugin": "3.28.0",
+    "@swc/cli": "0.8.0",
+    "@swc/core": "1.15.11",
+    "@types/node": "25.2.2",
+    "cross-env": "^10.1.0",
+    "eslint": "10",
+    "next": "16.1.6",
+    "payload": "3.76.1",
+    "prettier": "3.8.1",
+    "react-is": "19.2.4",
+    "turbo": "^2.8.3",
+    "typescript": "5.9.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@10.4.1",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.13",
+      "@types/react-dom": "19.2.3",
+      "react-is": "19.2.4"
+    }
+  },
+  "overrides": {
+    "@types/react": "19.2.13",
+    "@types/react-dom": "19.2.3",
+    "react-is": "19.2.4"
+  }
+}
