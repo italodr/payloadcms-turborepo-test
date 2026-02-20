@@ -1,0 +1,64 @@
+{
+	"name": "@test/utilities",
+	"versions": {
+		"1.0.0": {
+			"name": "@test/utilities",
+			"version": "1.0.0",
+			"source": "./src/index.ts",
+			"main": "./dist/index.js",
+			"types": "./dist/index.d.ts",
+			"exports": {
+				".": {
+					"import": "./dist/index.js",
+					"types": "./dist/index.d.ts",
+					"default": "./dist/index.js"
+				}
+			},
+			"sideEffects": false,
+			"license": "MIT",
+			"files": [
+				"dist",
+				"README.md"
+			],
+			"scripts": {
+				"build": "pnpm clean && pnpm build:swc && pnpm build:types",
+				"build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
+				"build:types": "tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
+				"clean": "rm -rf dist"
+			},
+			"publishConfig": {
+				"registry": "http://0.0.0.0:4873/"
+			},
+			"readmeFilename": "README.md",
+			"_id": "@test/utilities@1.0.0",
+			"_nodeVersion": "24.13.0",
+			"_npmVersion": "11.6.2",
+			"dist": {
+				"integrity": "sha512-5BsYDGb0xBhu5kyfwMg22AgdcJEY5HYJ8/crp3Py12XzoOUgeds6Bk8sPWipNl7yq9ADXVBXRnPR1dQzYizfKw==",
+				"shasum": "4ef4e1c2edb2d6930071f4387a53e696be306841",
+				"tarball": "http://0.0.0.0:4873/@test/utilities/-/@test/utilities-1.0.0.tgz"
+			},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2026-02-20T12:33:23.610Z",
+		"created": "2026-02-20T12:33:23.610Z",
+		"1.0.0": "2026-02-20T12:33:23.610Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.0"
+	},
+	"_uplinks": {},
+	"_distfiles": {},
+	"_attachments": {
+		"utilities-1.0.0.tgz": {
+			"shasum": "4ef4e1c2edb2d6930071f4387a53e696be306841",
+			"version": "1.0.0"
+		}
+	},
+	"_rev": "3-c15be7b9b0b762a3",
+	"_id": "@test/utilities",
+	"readme": "ERROR: No README data found!"
+}

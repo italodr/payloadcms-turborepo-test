@@ -1,0 +1,28 @@
+storage: /verdaccio/storage/data
+plugins: ./plugins
+
+web:
+  title: Test Package Manager
+
+auth:
+  htpasswd:
+    file: ./htpasswd
+    max_users: 1
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+
+packages:
+  "**":
+    access: $all
+    publish: $all
+    unpublish: $all
+    proxy: npmjs
+
+log:
+  - { type: file, path: ./logs/verdaccio.log, level: info }
+  - { type: stdout, format: pretty, level: http }
+
+listen:
+  - 0.0.0.0:4873

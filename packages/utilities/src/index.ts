@@ -1,1 +1,1 @@
-export * from "@private/icons";
+export * from "@test/utilities";
