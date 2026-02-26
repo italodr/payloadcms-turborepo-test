@@ -1,0 +1,39 @@
+{
+    "name": "@test/utilities",
+    "version": "1.0.0",
+    "source": "./src/index.ts",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "sideEffects": false,
+    "license": "MIT",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "pnpm clean && pnpm build:swc && pnpm build:types",
+        "build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
+        "build:types": "tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
+        "clean": "rm -rf dist"
+    },
+    "devDependencies": {
+        "@swc/cli": "0.7.9",
+        "@swc/core": "1.15.3",
+        "@types/node": "^25.0.1",
+        "@types/react": "^19.2.7",
+        "@types/react-dom": "^19.2.3",
+        "prettier": "^3.7.4",
+        "react": "19.2.3",
+        "typescript": "5.9.3"
+    },
+    "publishConfig": {
+        "registry": "http://0.0.0.0:4873/"
+    }
+}
