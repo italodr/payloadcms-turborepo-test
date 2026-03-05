@@ -1,4 +1,4 @@
-import { example } from 'utilities'
+import * as utilities from 'utilities'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
@@ -12,7 +12,9 @@ import { Media } from './collections/Media'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-example()
+const example = (utilities as any).example ?? (utilities as any)['module.exports']?.example
+
+example?.()
 
 export default buildConfig({
   admin: {
